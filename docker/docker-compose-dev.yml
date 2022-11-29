@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+
+  nginx:
+    build:
+      context: ./..
+      dockerfile: docker/nginx/dev.Dockerfile
+    container_name: coordinator-it-nginx
+    hostname: coordinator-it
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./../:/var/www/html
+    ports:
+      - "80:80"

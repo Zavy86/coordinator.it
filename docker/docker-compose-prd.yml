@@ -1,0 +1,16 @@
+version: "3"
+
+networks:
+  reverse-proxy:
+    external: true
+
+services:
+
+  nginx:
+    build:
+      context: ./..
+      dockerfile: docker/nginx/prd.Dockerfile
+    container_name: coordinator-it-nginx
+    hostname: coordinator-it
+    networks:
+      - reverse-proxy
