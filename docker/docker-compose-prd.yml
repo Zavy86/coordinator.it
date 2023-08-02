@@ -12,5 +12,6 @@ services:
       dockerfile: docker/nginx/prd.Dockerfile
     container_name: coordinator-it-nginx
     hostname: coordinator-it
+    restart: unless-stopped
     networks:
       - reverse-proxy
